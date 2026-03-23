@@ -1,0 +1,483 @@
+/* Add Item Form Styles - Responsive */
+
+textarea:focus {
+    border-color: #4b6cb7;
+    box-shadow: 0 0 0 3px rgba(75,108,183,0.2);
+    outline: none;
+}
+
+.add-item-section .add-item-form {
+    background-color: #fdfdfd;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    width: 70%;
+    max-width: 700px;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.add-item-section .form-header {
+    color: #374151;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.add-item-section .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.add-item-section .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-item-section .form-group input,
+.add-item-section .form-group select,
+.add-item-section .form-group textarea {
+    border-radius: 12px;
+    border: 2px solid #dcdcdc;
+    padding: 14px 18px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.add-item-section .form-group input:focus,
+.add-item-section .form-group select:focus,
+.add-item-section .form-group textarea:focus {
+    border-color: #374151;
+    box-shadow: 0 0 0 3px rgba(52,152,219,0.2);
+}
+
+.add-item-section .form-buttons {
+    grid-column: span 2;
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.add-item-section .btn-add,
+.add-item-section .btn-cancel {
+    background-color: #5a6c7d;
+    color: white;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 15px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.add-item-section .btn-add:hover,
+.add-item-section .btn-cancel:hover {
+    background-color: #4a5a6b;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(90, 108, 125, 0.2);
+}
+
+/* ============================================ */
+/* ERROR MESSAGE STYLES */
+/* ============================================ */
+
+.error-message {
+    display: none;
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.input-error {
+    border-color: #e74c3c !important;
+}
+
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    bottom: 30px;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.5s, bottom 0.5s;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px;
+}
+
+@keyframes fadein {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+    to {
+        top: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        top: 30px;
+        opacity: 1;
+    }
+    to {
+        top: 0;
+        opacity: 0;
+    }
+}
+
+/* ============================================ */
+/* RESPONSIVE - الأجهزة اللوحية
+/* ============================================ */
+
+@media (max-width: 1024px) {
+    .add-item-section .add-item-form {
+        width: 85%;
+        padding: 35px;
+    }
+    
+    .add-item-section .form-header {
+        font-size: 19px;
+    }
+    
+    .add-item-section .form-grid {
+        gap: 18px;
+    }
+    
+    .add-item-section .form-group input,
+    .add-item-section .form-group select,
+    .add-item-section .form-group textarea {
+        padding: 13px 16px;
+        font-size: 14px;
+    }
+}
+
+/* ============================================ */
+/* RESPONSIVE - الشاشات المتوسطة
+/* ============================================ */
+
+@media (max-width: 768px) {
+    .add-item-section .add-item-form {
+        width: 100%;
+        max-width: none;
+        padding: 25px;
+        border-radius: 12px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .add-item-section .form-header {
+        font-size: 18px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .add-item-section .form-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .add-item-section .form-group label {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+    
+    .add-item-section .form-group input,
+    .add-item-section .form-group select,
+    .add-item-section .form-group textarea {
+        padding: 12px 15px;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+    
+    .add-item-section .form-buttons {
+        grid-column: span 1;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 15px;
+    }
+    
+    .add-item-section .btn-add,
+    .add-item-section .btn-cancel {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    .toast {
+        min-width: 200px;
+        margin-left: -100px;
+        font-size: 14px;
+        padding: 14px;
+    }
+}
+
+/* ============================================ */
+/* RESPONSIVE - الشاشات الصغيرة
+/* ============================================ */
+
+@media (max-width: 480px) {
+    .add-item-section .add-item-form {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    
+    .add-item-section .form-header {
+        font-size: 17px;
+        margin-bottom: 18px;
+    }
+    
+    .add-item-section .form-grid {
+        gap: 12px;
+    }
+    
+    .add-item-section .form-group label {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+    
+    .add-item-section .form-group input,
+    .add-item-section .form-group select,
+    .add-item-section .form-group textarea {
+        padding: 11px 14px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+    
+    .add-item-section .form-buttons {
+        gap: 10px;
+        margin-top: 12px;
+    }
+    
+    .add-item-section .btn-add,
+    .add-item-section .btn-cancel {
+        padding: 11px 18px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+    
+    .error-message {
+        font-size: 12px;
+    }
+    
+    .toast {
+        min-width: 180px;
+        margin-left: -90px;
+        font-size: 13px;
+        padding: 12px;
+    }
+}
+
+/* ============================================ */
+/* RESPONSIVE - الشاشات النحيفة جداً (360px)
+/* ============================================ */
+
+@media (max-width: 360px) {
+    .add-item-section .add-item-form {
+        padding: 15px;
+        border-radius: 8px;
+    }
+    
+    .add-item-section .form-header {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .add-item-section .form-grid {
+        gap: 10px;
+    }
+    
+    .add-item-section .form-group label {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+    
+    .add-item-section .form-group input,
+    .add-item-section .form-group select,
+    .add-item-section .form-group textarea {
+        padding: 9px 12px;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+    
+    .add-item-section .form-buttons {
+        gap: 8px;
+        margin-top: 10px;
+    }
+    
+    .add-item-section .btn-add,
+    .add-item-section .btn-cancel {
+        padding: 9px 15px;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+    
+    .error-message {
+        font-size: 11px;
+    }
+    
+    .toast {
+        min-width: 160px;
+        margin-left: -80px;
+        font-size: 12px;
+        padding: 10px;
+        bottom: 20px;
+    }
+    
+    .toast.show {
+        bottom: 40px;
+    }
+}
+
+/* ============================================ */
+/* RESPONSIVE - iPhone SE & Galaxy S5 (320px)
+/* ============================================ */
+
+@media (max-width: 320px) {
+    .add-item-section .add-item-form {
+        padding: 12px;
+        border-radius: 6px;
+    }
+    
+    .add-item-section .form-header {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    
+    .add-item-section .form-grid {
+        gap: 8px;
+    }
+    
+    .add-item-section .form-group label {
+        font-size: 11px;
+        margin-bottom: 3px;
+    }
+    
+    .add-item-section .form-group input,
+    .add-item-section .form-group select,
+    .add-item-section .form-group textarea {
+        padding: 8px 10px;
+        font-size: 11px;
+        border-radius: 5px;
+    }
+    
+    .add-item-section .form-buttons {
+        gap: 6px;
+        margin-top: 8px;
+    }
+    
+    .add-item-section .btn-add,
+    .add-item-section .btn-cancel {
+        padding: 8px 12px;
+        font-size: 11px;
+        border-radius: 5px;
+    }
+    
+    .error-message {
+        font-size: 10px;
+        margin-top: 3px;
+    }
+    
+    .toast {
+        min-width: 140px;
+        margin-left: -70px;
+        font-size: 11px;
+        padding: 8px;
+        bottom: 15px;
+    }
+    
+    .toast.show {
+        bottom: 35px;
+    }
+}
+
+/* ============================================ */
+/* RESPONSIVE - Galaxy Fold مطوي (280px)
+/* ============================================ */
+
+@media (max-width: 280px) {
+    .add-item-section .add-item-form {
+        padding: 10px;
+    }
+    
+    .add-item-section .form-header {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+    
+    .add-item-section .form-grid {
+        gap: 6px;
+    }
+    
+    .add-item-section .form-group label {
+        font-size: 10px;
+    }
+    
+    .add-item-section .form-group input,
+    .add-item-section .form-group select,
+    .add-item-section .form-group textarea {
+        padding: 7px 8px;
+        font-size: 10px;
+    }
+    
+    .add-item-section .btn-add,
+    .add-item-section .btn-cancel {
+        padding: 7px 10px;
+        font-size: 10px;
+    }
+    
+    .error-message {
+        font-size: 9px;
+    }
+    
+    .toast {
+        min-width: 120px;
+        margin-left: -60px;
+        font-size: 10px;
+        padding: 7px;
+    }
+}
+
+/* ============================================ */
+/* RESPONSIVE - الشاشات الكبيرة جداً
+/* ============================================ */
+
+@media (min-width: 1920px) {
+    .add-item-section .add-item-form {
+        max-width: 800px;
+        padding: 45px;
+    }
+    
+    .add-item-section .form-header {
+        font-size: 22px;
+    }
+    
+    .add-item-section .form-grid {
+        gap: 24px;
+    }
+    
+    .add-item-section .form-group input,
+    .add-item-section .form-group select,
+    .add-item-section .form-group textarea {
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+}

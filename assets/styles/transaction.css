@@ -1,0 +1,119 @@
+/* تصميم الفلاتر */
+        .filters-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+.search-input {
+    flex: 1;
+    min-width: 200px;  /* كان 250px */
+    padding: 10px 14px;  /* كان 12px 18px */
+    border: 2px solid #dcdcdc;
+    border-radius: 10px;  /* كان 12px */
+    font-size: 14px;  /* كان 15px */
+    transition: 0.3s;
+     margin-bottom: 15px
+}
+
+        .search-input:focus {
+            border-color: #374151;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+            outline: none;
+        }
+
+.filter-select {
+    padding: 10px 14px;  /* كان 12px 18px */
+    border: 2px solid #dcdcdc;
+    border-radius: 10px;  /* كان 12px */
+    font-size: 13px;  /* كان 14px */
+    background-color: white;
+    color: #374151;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;  /* كان 150px */
+    margin-bottom: 15px;  /* مسافة إضافية */
+
+}
+
+        .filter-select:hover {
+            border-color: #5a6c7d;
+            background-color: #f9fafb;
+        }
+
+        .filter-select:focus {
+            border-color: #374151;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+            outline: none;
+        }
+
+
+.reset-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    color: #444;
+        margin-bottom: 15px;  /* مسافة إضافية */
+
+}
+
+.reset-btn:hover {
+    background-color: #d9534f;
+    color: white;
+}
+
+.reset-btn .material-symbols-outlined {
+    font-size: 22px;
+    vertical-align: middle;
+}
+        
+/* تحديث section-header */
+.section-header {
+    margin-bottom: 25px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .filters-container {
+        flex-direction: column;
+        align-items: stretch;
+    }           
+    .search-input,
+    .filter-select {
+        width: 100%;
+        min-width: auto;
+        }
+}
+
+
+
+
+        
+        @media (max-width: 600px) {
+            .add-employee-section .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .add-employee-section .form-buttons {
+                grid-column: span 1;
+                flex-direction: column;
+            }
+        }

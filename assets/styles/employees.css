@@ -1,0 +1,335 @@
+/* Employee Form Styles - Responsive */
+
+.add-employee-section .add-employee-form {
+    background-color: #fdfdfd;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    width: 70%;
+    max-width: 700px;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.add-employee-section .form-header {
+    color: #374151;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.add-employee-section .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.add-employee-section .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-employee-section .form-group input,
+.add-employee-section .form-group select {
+    border-radius: 12px;
+    border: 2px solid #dcdcdc;
+    padding: 14px 18px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.add-employee-section .form-group input:focus,
+.add-employee-section .form-group select:focus {
+    border-color: #374151;
+    box-shadow: 0 0 0 3px rgba(52,152,219,0.2);
+}
+
+.add-employee-section .form-buttons {
+    grid-column: span 2;
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.add-employee-section .btn-add,
+.add-employee-section .btn-cancel {
+    background-color: #5a6c7d;
+    color: white;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 15px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.add-employee-section .btn-add:hover,
+.add-employee-section .btn-cancel:hover {
+    background-color: #4a5a6b;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(90, 108, 125, 0.2);
+}
+
+/* ====================================
+   Responsive للأجهزة اللوحية
+   ==================================== */
+
+@media (max-width: 1024px) {
+    .add-employee-section .add-employee-form {
+        width: 85%;
+        padding: 35px;
+    }
+    
+    .add-employee-section .form-header {
+        font-size: 19px;
+    }
+    
+    .add-employee-section .form-grid {
+        gap: 18px;
+    }
+    
+    .add-employee-section .form-group input,
+    .add-employee-section .form-group select {
+        padding: 13px 16px;
+        font-size: 14px;
+    }
+}
+
+/* ====================================
+   Responsive للشاشات المتوسطة
+   ==================================== */
+
+@media (max-width: 768px) {
+    .add-employee-section .add-employee-form {
+        width: 100%;
+        max-width: none;
+        padding: 25px;
+        border-radius: 12px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .add-employee-section .form-header {
+        font-size: 18px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .add-employee-section .form-grid {
+        grid-template-columns: 1fr; /* عمود واحد */
+        gap: 15px;
+    }
+    
+    .add-employee-section .form-group label {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+    
+    .add-employee-section .form-group input,
+    .add-employee-section .form-group select {
+        padding: 12px 15px;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+    
+    .add-employee-section .form-buttons {
+        grid-column: span 1; /* بما إنه صار عمود واحد */
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 15px;
+    }
+    
+    .add-employee-section .btn-add,
+    .add-employee-section .btn-cancel {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+/* ====================================
+   Responsive للشاشات الصغيرة
+   ==================================== */
+
+@media (max-width: 480px) {
+    .add-employee-section .add-employee-form {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    
+    .add-employee-section .form-header {
+        font-size: 17px;
+        margin-bottom: 18px;
+    }
+    
+    .add-employee-section .form-grid {
+        gap: 12px;
+    }
+    
+    .add-employee-section .form-group label {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+    
+    .add-employee-section .form-group input,
+    .add-employee-section .form-group select {
+        padding: 11px 14px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+    
+    .add-employee-section .form-buttons {
+        gap: 10px;
+        margin-top: 12px;
+    }
+    
+    .add-employee-section .btn-add,
+    .add-employee-section .btn-cancel {
+        padding: 11px 18px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+}
+
+/* ====================================
+   Responsive للشاشات النحيفة جداً
+   ==================================== */
+
+/* للشاشات بعرض 360px وأقل */
+@media (max-width: 360px) {
+    .add-employee-section .add-employee-form {
+        padding: 15px;
+        border-radius: 8px;
+    }
+    
+    .add-employee-section .form-header {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .add-employee-section .form-grid {
+        gap: 10px;
+    }
+    
+    .add-employee-section .form-group label {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+    
+    .add-employee-section .form-group input,
+    .add-employee-section .form-group select {
+        padding: 9px 12px;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+    
+    .add-employee-section .form-buttons {
+        gap: 8px;
+        margin-top: 10px;
+    }
+    
+    .add-employee-section .btn-add,
+    .add-employee-section .btn-cancel {
+        padding: 9px 15px;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+}
+
+/* للشاشات بعرض 320px */
+@media (max-width: 320px) {
+    .add-employee-section .add-employee-form {
+        padding: 12px;
+        border-radius: 6px;
+    }
+    
+    .add-employee-section .form-header {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    
+    .add-employee-section .form-grid {
+        gap: 8px;
+    }
+    
+    .add-employee-section .form-group label {
+        font-size: 11px;
+        margin-bottom: 3px;
+    }
+    
+    .add-employee-section .form-group input,
+    .add-employee-section .form-group select {
+        padding: 8px 10px;
+        font-size: 11px;
+        border-radius: 5px;
+    }
+    
+    .add-employee-section .form-buttons {
+        gap: 6px;
+        margin-top: 8px;
+    }
+    
+    .add-employee-section .btn-add,
+    .add-employee-section .btn-cancel {
+        padding: 8px 12px;
+        font-size: 11px;
+        border-radius: 5px;
+    }
+}
+
+/* للشاشات بعرض 280px وأقل */
+@media (max-width: 280px) {
+    .add-employee-section .add-employee-form {
+        padding: 10px;
+    }
+    
+    .add-employee-section .form-header {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+    
+    .add-employee-section .form-grid {
+        gap: 6px;
+    }
+    
+    .add-employee-section .form-group label {
+        font-size: 10px;
+    }
+    
+    .add-employee-section .form-group input,
+    .add-employee-section .form-group select {
+        padding: 7px 8px;
+        font-size: 10px;
+    }
+    
+    .add-employee-section .btn-add,
+    .add-employee-section .btn-cancel {
+        padding: 7px 10px;
+        font-size: 10px;
+    }
+}
+
+/* ====================================
+   Responsive للشاشات الكبيرة جداً
+   ==================================== */
+
+@media (min-width: 1920px) {
+    .add-employee-section .add-employee-form {
+        max-width: 800px;
+        padding: 45px;
+    }
+    
+    .add-employee-section .form-header {
+        font-size: 22px;
+    }
+    
+    .add-employee-section .form-grid {
+        gap: 24px;
+    }
+    
+    .add-employee-section .form-group input,
+    .add-employee-section .form-group select {
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.filters-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 20px 25px;
+    background-color: #f8f9fa;
+    border-radius: 16px;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    flex: 1;
+    min-width: 250px;
+    padding: 12px 18px;
+    border: 2px solid #dcdcdc;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.search-input:focus {
+    border-color: #374151;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+.filter-select {
+    padding: 12px 18px;
+    border: 2px solid #dcdcdc;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: white;
+    color: #374151;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+.filter-select:hover {
+    border-color: #5a6c7d;
+    background-color: #f9fafb;
+}
+
+.filter-select:focus {
+    border-color: #374151;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .filters-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-input,
+    .filter-select {
+        width: 100%;
+        min-width: auto;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="filters-container">
+        <input type="search" placeholder="Search by code, category, or employee..." class="search-input" id="searchInput">
+        
+        <select class="filter-select" id="categoryFilter">
+            <option value="">All Categories</option>
+            <!-- Categories will be loaded dynamically -->
+        </select>
+        
+        <select class="filter-select" id="statusFilter">
+            <option value="">All Status</option>
+            <option value="Active">Active</option>
+            <option value="Standby">Standby</option>
+            <option value="Out of Service">Out of Service</option>
+            <option value="In Maintenance">In Maintenance</option>
+        </select>
+    </div>
+
+    <script>
+        // Load categories dynamically
+        async function loadCategories() {
+            try {
+                const res = await fetch('../api/category/get.php');
+                const data = await res.json();
+                
+                if (data.success) {
+                    const categoryFilter = document.getElementById('categoryFilter');
+                    data.category.forEach(cat => {
+                        const option = document.createElement('option');
+                        option.value = cat.cat_id;
+                        option.textContent = cat.cat_name;
+                        categoryFilter.appendChild(option);
+                    });
+                }
+            } catch (err) {
+                console.error('Error loading categories:', err);
+            }
+        }
+
+        // Filter event listeners
+        document.getElementById('searchInput').addEventListener('input', debounce(filterItems, 300));
+        document.getElementById('categoryFilter').addEventListener('change', filterItems);
+        document.getElementById('statusFilter').addEventListener('change', filterItems);
+
+        function filterItems() {
+            const search = document.getElementById('searchInput').value;
+            const category = document.getElementById('categoryFilter').value;
+            const status = document.getElementById('statusFilter').value;
+            
+            console.log('Filters:', { search, category, status });
+            // Call your fetch items function here
+            // fetchItems(search, category, status);
+        }
+
+        function debounce(fn, delay = 300) {
+            let timer;
+            return function(...args) {
+                clearTimeout(timer);
+                timer = setTimeout(() => fn.apply(this, args), delay);
+            }
+        }
+
+        // Load categories on page load
+        document.addEventListener('DOMContentLoaded', loadCategories);
+    </script>
+</body>
+</html>
