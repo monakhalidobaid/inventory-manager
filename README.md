@@ -2,6 +2,7 @@
 
 A robust, web-based resource management platform developed during my **IT Co-op training**. This system was designed to transition manual asset tracking into a streamlined, automated digital workflow, supporting everything from equipment assignment to real-time status reporting.
 
+
 ### \+ Technologies
 
 **Frontend:** ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?style=flat&logo=javascript&logoColor=black)
@@ -42,5 +43,18 @@ The project follows a modular structure to keep the business logic separated fro
 
 -----
 
-*Built to solve real-world logistical challenges.*
+### 📸 System Screenshots
 
+<details>
+  <summary>Click to view system interface</summary>
+  
+  <p align="center">
+    <img src="img/1.jpg" width="45%" alt="Dashboard Overview">
+    <img src="img/2.jpg" width="45%" alt="Add Asset">
+    <br>
+    <img src="img/3.jpg" width="45%" alt="Inventory List">
+    <img src="img/4.jpg" width="45%" alt="Asset Assignment">
+    <br>
+    <img src="img/5.jpg" width="91%" alt="System Reports">
+  </p>
+</details>
